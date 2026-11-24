@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign up</title>
+<link rel="stylesheet" href="/style.css">
+<script src="/camera.js" defer></script>
+</head>
+<body data-page="setup">
+<header hidden>
+  <a href="/">Home</a>
+  <a href="/admin" id="admin-link" hidden>Admin</a>
+  <span class="grow"></span>
+  <span id="who"></span>
+  <button id="logout">Log out</button>
+</header>
+<main hidden>
+<h1>Sign up</h1>
+<p>The camera will ask you to turn your head, then save your face. Make sure only you can be seen.</p>
+<form id="setup" class="stack">
+  <label>Username <input name="name" required maxlength="50" autocomplete="username"></label>
+  <label>Password (at least 8 characters) <input name="password" type="password" required minlength="8" maxlength="128" autocomplete="new-password"></label>
+  <label class="check"><input type="checkbox" required> I agree to an encrypted template of my face being stored, only to log me in. No picture is kept, and I can delete it any time after logging in.</label>
+  <button class="primary">Start camera</button>
+</form>
+<div class="camera" hidden>
+  <video autoplay playsinline muted aria-label="Camera preview"></video>
+  <p class="prompt" role="status" aria-live="assertive"></p>
+</div>
+</main>
+<p id="notice" role="status" aria-live="polite"></p>
+</body>
+</html>

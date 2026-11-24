@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Face login</title>
+<link rel="stylesheet" href="/style.css">
+<script src="/camera.js" defer></script>
+</head>
+<body data-page="index">
+<header hidden>
+  <a href="/">Home</a>
+  <a href="/admin" id="admin-link" hidden>Admin</a>
+  <span class="grow"></span>
+  <span id="who"></span>
+  <button id="logout">Log out</button>
+</header>
+<main hidden>
+<h1 id="welcome"></h1>
+<p>Your password and face were both confirmed. This page is only for registered people.</p>
+<h2>Your data</h2>
+<p>We keep your username, a hash of your password, an encrypted template of your face and a log of your logins.</p>
+<button id="delete-me">Delete my account and face data</button>
+<dialog id="check" aria-labelledby="check-title">
+  <h2 id="check-title"></h2>
+  <div class="camera">
+    <video autoplay playsinline muted aria-label="Camera preview"></video>
+    <p class="prompt" role="status" aria-live="assertive"></p>
+  </div>
+  <button id="go" class="primary">Start</button>
+  <button id="cancel">Cancel</button>
+</dialog>
+</main>
+<p id="notice" role="status" aria-live="polite"></p>
+</body>
+</html>

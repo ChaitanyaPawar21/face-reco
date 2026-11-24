@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin</title>
+<link rel="stylesheet" href="/style.css">
+<script src="/camera.js" defer></script>
+</head>
+<body data-page="admin">
+<header hidden>
+  <a href="/">Home</a>
+  <a href="/admin" id="admin-link" hidden>Admin</a>
+  <span class="grow"></span>
+  <span id="who"></span>
+  <button id="logout">Log out</button>
+</header>
+<main hidden>
+<h1>Admin</h1>
+<h2>Invite someone</h2>
+<p>You confirm with your face and get a link that works once, within 24 hours. Send it privately: whoever opens it signs up with their own face.</p>
+<form id="invite" class="row">
+  <label>Role <select name="role"><option value="user">Normal user</option><option value="admin">Admin</option></select></label>
+  <button class="primary">Create link</button>
+</form>
+<p id="link" hidden><label>Link to send <input readonly></label></p>
+<h2>People</h2>
+<div class="scroll"><table>
+<thead><tr><th>Name</th><th>Role</th><th>Actions</th></tr></thead><tbody id="people"></tbody></table></div>
+<h2>History</h2>
+<div class="scroll"><table>
+<thead><tr><th>Time</th><th>Event</th><th>Result</th><th>Name</th><th>Detail</th></tr></thead><tbody id="history"></tbody></table></div>
+<dialog id="check" aria-labelledby="check-title">
+  <h2 id="check-title"></h2>
+  <div class="camera">
+    <video autoplay playsinline muted aria-label="Camera preview"></video>
+    <p class="prompt" role="status" aria-live="assertive"></p>
+  </div>
+  <button id="go" class="primary">Start</button>
+  <button id="cancel">Cancel</button>
+</dialog>
+</main>
+<p id="notice" role="status" aria-live="polite"></p>
+</body>
+</html>
